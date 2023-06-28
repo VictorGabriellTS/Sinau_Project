@@ -1,0 +1,874 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    background-color: #e7ebf2;
+}
+
+:root {
+    --text-color: #1b1b1b;
+    --sub-text-color: #78766e;
+    --logo-color: #015aff;
+    --background-color: #fff;
+    --icons-color: #404139;
+    --buttons-color: #dfe7ff;
+    --tesk-color-1: #92dbff;
+    --task-color-2: #87a7ff;
+    --task-color-3: #6776ff;
+}
+
+.container {
+    display: flex;
+    gap: 1px;
+}
+
+.sidebar {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 15%;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+}
+
+.sidebar .logo p {
+    padding: 8px;
+    background-color: var(--buttons-color);
+    color: var(--logo-color);
+    border-radius: 8px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.sidebar .logo h1 {
+    font-size: 20px;
+}
+
+.sidebar .main-menu, .sidebar .apps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar .main-menu h3, .sidebar .apps h3 {
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--sub-text-color);
+    padding: 0px 20px;
+}
+
+.sidebar .main-menu ul, .sidebar .apps ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .main-menu ul li button, .sidebar .apps ul li button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--icons-color);
+    padding: 8px 20px;
+}
+
+.sidebar .main-menu ul li button svg {
+    fill: var(--icons-color);
+    width: 16px;
+    height: 16px;
+}
+
+.sidebar .main-menu ul li button:hover{
+    cursor: pointer;
+    border-left: 3px solid var(--logo-color);
+}
+
+.sidebar .apps ul li button img {
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar .apps ul li button:hover {
+    cursor: pointer;
+    color: var(--logo-color);
+    border-left: 3px solid var(--logo-color);
+}
+
+.sidebar .logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 16px;
+}
+
+.sidebar .logout button {
+    border: none;
+    background-color: #e4e4e4;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 8px;
+    color: var(--sub-text-color);
+    width: 100px;
+    font-size: 16px;
+}
+
+.sidebar .logout button svg {
+    fill: var(--sub-text-color);
+    width: 16px;
+    height: 16px;
+}
+
+.sidebar .logout button:hover {
+    cursor: pointer;
+    background-color: #d4d5d8;
+}
+
+.content {
+    flex: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.content .search-bar {
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 8px;
+}
+
+.content .search-bar .search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.content .search-bar .search button {
+    border: none;
+    background-color: transparent;
+}
+
+.content .search-bar .search button svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--icons-color);
+}
+
+.content .search-bar .search button svg:hover {
+    fill: var(--logo-color);
+    cursor: pointer;
+}
+
+.content .search-bar .search form input {
+    padding: 4px;
+    border: none;
+    background-color: transparent;
+    width: 400px;
+}
+
+.content .search-bar .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    margin-left: auto;
+}
+
+.content .search-bar .buttons button {
+    border: none;
+    background-color: transparent;
+}
+
+.content .search-bar .buttons button svg {
+    fill: var(--icons-color);
+    width: 16px;
+    height: 16px;
+}
+
+.content .search-bar .buttons button svg:hover {
+    fill: var(--logo-color);
+    cursor: pointer;
+}
+
+.content .search-bar .buttons .upload {
+    background-color: var(--buttons-color);
+    padding: 8px;
+    border-radius: 8px;
+    color: var(--logo-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.content .search-bar .buttons .upload svg {
+    fill: var(--logo-color);
+}
+
+.content .search-bar .buttons .upload:hover {
+    background-color: #bfcbf4;
+    cursor: pointer;
+}
+
+.content .search-bar .hours {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .partitions {
+    display: flex;
+}
+
+.content .partitions .topics {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    flex: 70%;
+}
+
+.content .partitions .topics .alert {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#2d76ffc5, #347bff9d);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.content .partitions .topics .alert .top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.content .partitions .topics .alert .top button {
+    background-color: transparent;
+    border: none;
+}
+
+.content .partitions .topics .alert .top button svg {
+    fill: var(--background-color);
+    width: 14px;
+    height: 14px;
+}
+
+.content .partitions .topics .alert .top button svg:hover {
+    cursor: pointer;
+    fill: var(--buttons-color);
+}
+
+.content .partitions .topics .alert .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.content .partitions .topics .alert .bottom .text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 400px;
+}
+
+.content .partitions .topics .alert .bottom .text h3, .alert .text p {
+    color: var(--background-color);
+    font-size: 14px;
+    text-align: justify;
+}
+
+.content .partitions .topics .alert .bottom .text h3 {
+    font-size: 18px;
+}
+
+.content .partitions .topics .alert .bottom .date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 16px;
+}
+
+.content .partitions .topics .alert .bottom .date p, .content .partitions .topics .alert .bottom .date h3 {
+    font-size: 11px;
+}
+
+.content .partitions .topics .alert .bottom .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.content .partitions .topics .alert .bottom .button button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    width: 120px;
+    color: var(--background-color);
+    background-color: var(--logo-color);
+}
+
+.content .partitions .topics .alert .bottom .button button:hover {
+    cursor: pointer;
+    background-color: #004cdb;
+}
+
+.content .partitions .topics .tasks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.content .partitions .topics .tasks .classes {
+    background-color: var(--background-color);
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 340px;
+    height: 330px;
+}
+
+.content .partitions .topics .tasks .classes .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.content .partitions .topics .tasks .classes .title button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .partitions .topics .tasks .classes .title button svg {
+    fill: var(--icons-color);
+    width: 16px;
+    height: 16px;
+}
+
+.content .partitions .topics .tasks .classes .title button svg:hover {
+    fill: var(--logo-color);
+    cursor: pointer;
+}
+
+.content .partitions .topics .tasks .classes table {
+    width: 100%;
+    height: 100%;
+}
+
+.content .partitions .topics .tasks .classes table th, td{
+    text-align: justify;
+    font-size: 16px;
+}
+
+.content .partitions .topics .tasks .result .cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .partitions .topics .tasks .result .cards ul {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    height: 70px;
+    padding: 4px;
+}
+
+.content .partitons .topics .tasks .result .cards ul li .card .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .card .icon p {
+    color: var(--background-color);
+    padding: 8px;
+    text-align: center;
+    background-color: #015aff9a;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .second .icon p {
+    background-color: #8a70d3d0;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .third .icon p {
+    background-color: #db00c9a6;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .fourth .icon p {
+    background-color: #ff000090;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .card .text {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    gap: 4px;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .card .text p {
+    color: var(--sub-text-color);
+    font-size: 12px;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .card .bar {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .card .bar p {
+    margin-left: auto;
+    color: var(--logo-color);
+}
+
+.content .partitions .topics .tasks .result .cards ul li .second .bar p {
+    color: var(--task-color-2);
+}
+
+.content .partitions .topics .tasks .result .cards ul li .third .bar p {
+    color: var(--task-color-3);
+}
+
+.content .partitions .topics .tasks .result .cards ul li .fourth .bar p {
+    color: var(--tesk-color-1);
+}
+
+.content .partitions .topics .tasks .result .cards ul li .card .bar div{
+    width: 100px;
+    height: 10px;
+    border-radius: 16px;
+    background-color: #dde1e8;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .card .bar div div {
+    width: 100%;
+    height: 100%;
+    background-color: var(--logo-color);
+    border-radius: 16px;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .second .bar div div {
+    background-color: var(--task-color-2);
+    width: 32%;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .third .bar div div {
+    background-color: var(--task-color-3);
+    width: 80%;
+}
+
+.content .partitions .topics .tasks .result .cards ul li .fourth .bar div div {
+    background-color: var(--tesk-color-1);
+    width: 26%;
+}
+
+.content .partitions .topics .files {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: auto;
+}
+
+.content .partitions .topics .files .documents {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.content .partitions .topics .files .documents .title h3 {
+    font-size: 16px;
+}
+
+.content .partitions .topics .files .documents .items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.content .partitions .topics .files .documents .items .card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 8px;
+    width: 356px;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver .more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver .more button {
+    border: none;
+    background-color: transparent;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver .more button svg {
+    fill: var(--icons-color);
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver .more button svg:hover {
+    fill: var(--logo-color);
+    cursor: pointer;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver button {
+    border: none;
+    background-color: transparent;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver button svg {
+    fill: #ff4000;
+    background-color: #ff99003f;
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.content .partitions .topics .files .documents .items .second .archiver button svg {
+    fill: #004cdb;
+    background-color: #004ddb48;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver .text h3 {
+    font-size: 16px;
+}
+
+.content .partitions .topics .files .documents .items .card .archiver .text p {
+    color: var(--sub-text-color);
+    font-size: 14px;
+}
+
+.content .partitions .topics .files .books .items .card .archiver button svg {
+    fill: #9a02ec;
+    background-color: #8300c929;
+}
+
+.content .partitions .topics .files .books .items .second .archiver button svg {
+    fill: #33a7ff;
+    background-color: #00ddff3a;
+}
+
+.content .partitions .account {
+    flex: 30%;
+    background-color: var(--background-color);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.content .partitions .account .profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.content .partitions .account .profile .picture button {
+    border: none;
+    background-color: transparent;
+}
+
+.content .partitions .account .profile .picture button img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.content .partitions .account .profile .picture button img:hover {
+    cursor: pointer;
+}
+
+.content .partitions .account .profile .name {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    text-align: justify;
+}
+
+.content .partitions .account .profile .name h3 {
+    font-size: 20px;
+}
+
+.content .partitions .account .profile .name p {
+    font-size: 14px;
+    color: var(--sub-text-color);
+}
+
+.content .partitions .account .profile .more button {
+    border: none;
+    background-color: transparent;
+}
+
+.content .partitions .account .profile .more {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+.content .partitions .account .profile .more button svg {
+    fill: var(--icons-color);
+    width: 16px;
+    height: 16px;
+}
+
+.content .partitions .account .profile .more button svg:hover {
+    cursor: pointer;
+    fill: var(--logo-color);
+}
+
+.content .partitions .account .about p {
+    text-align: justify;
+    font-size: 14px;
+    width: 250px;
+}
+
+.content .partitions .account .upcoming {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.content .partitions .account .upcoming .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .partitions .account .upcoming .title h3 {
+    font-size: 18px;
+}
+
+.content .partitions .account .upcoming .title button {
+    border: none;
+    background-color: transparent;
+}
+
+.content .partitions .account .upcoming .title button svg {
+    fill: var(--icons-color);
+    width: 16px;
+    height: 16px;
+}
+
+.content .partitions .account .upcoming .title button svg:hover {
+    fill: var(--logo-color);
+    cursor: pointer;
+}
+
+.content .partitions .account .upcoming .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content .partitions .account .upcoming .cards .card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.content .partitions .account .upcoming .cards .card .icon svg {
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    fill: #ff4000;
+    background-color: #ff99003f;
+    border-radius: 8px;
+}
+
+.content .partitions .account .upcoming .cards .second .icon svg {
+    fill: #004cdb;
+    background-color: #004ddb48;
+}
+
+.content .partitions .account .upcoming .cards .third .icon svg {
+    fill: #004cdb;
+    background-color: #004ddb48;
+}
+
+.content .partitions .account .upcoming .cards .fourth .icon svg {
+    fill: #156d25;
+    background-color: #229e397c;
+}
+
+.content .partitions .account .upcoming .cards .card .icon svg:hover {
+    cursor: pointer;
+}
+
+.content .partitions .account .upcoming .cards .card .text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.content .partitions .account .upcoming .cards .card .text h3 {
+    font-size: 16px;
+}
+
+.content .partitions .account .upcoming .cards .card .date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.content .partitions .account .upcoming .cards .card .date svg {
+    fill: var(--icons-color);
+    width: 13px;
+    height: 13px;
+}
+
+.content .partitions .account .upcoming .cards .card .date p {
+    color: var(--icons-color);
+    font-size: 13px;
+}
+
+.content .partitions .account .upcoming .cards .card .date div {
+    height: 14px;
+    padding: 0.5px;
+    background-color: var(--sub-text-color);
+}
+
+.content .partitions .account .upcoming .cards .card .date h3 {
+    color: var(--task-color-3);
+    font-size: normal;
+    font-size: 13px;
+}
+
+.content .partitions .account .upcoming .cards .third .date h3 {
+    color: #003088;
+}
+
+.content .partitions .account .upcoming .cards .fourth .date h3 {
+    color: #003088;
+}
+
+.content .partitions .account .box-calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.content .partitions .account .box-calendar .calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: linear-gradient(#004cdb, #015aff);
+    padding: 16px;
+    border-radius: 8px;
+    width: 250px;
+    height: 250px;
+}
+
+.content .partitions .account .box-calendar .calendar .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .partitions .account .box-calendar .calendar .title h3, .calendar .title p {
+    color: var(--background-color);
+    font-weight: normal;
+}
+
+.content .partitions .account .box-calendar .calendar .title p {
+    font-size: 14px;
+    color: #ededed;
+}
+
+.content .partitions .account .box-calendar .calendar table {
+    width: 100%;
+    height: 100%;
+}
+
+.content .partitions .account .box-calendar .calendar table, .calendar tr, .calendar th, .calendar td {
+    color: var(--background-color);
+}
+
+.content .partitions .account .box-calendar .calendar table th, .calendar td {
+    text-align: center;
+    padding: 2px;
+}
+
+.content .partitions .account .box-calendar .calendar table .next-month {
+    opacity: 40%;
+}
+
+.content .partitions .account .box-calendar .calendar table .last-month {
+    opacity: 40%;
+}
+
+.content .partitions .account .box-calendar .calendar table .today {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    color: var(--logo-color);
+    box-shadow: 0px 2px 10px var(--icons-color);
+}
